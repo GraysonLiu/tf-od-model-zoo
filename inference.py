@@ -16,7 +16,7 @@ def run_inference_for_single_image(sess, tensor_dict, image_tensor, image):
     output_dict = sess.run(tensor_dict,
                            feed_dict={image_tensor: np.expand_dims(image, 0)})
     time2 = time.time()
-    # print('{}ms'.format((time2 - time1) * 1000))
+    print('{}ms'.format((time2 - time1) * 1000))
 
     # all outputs are float32 numpy arrays, so convert types as appropriate
     output_dict['num_detections'] = int(output_dict['num_detections'][0])
@@ -58,7 +58,7 @@ def init_model():
     if tf.__version__ < '1.4.0':
         raise ImportError('Please upgrade your tensorflow installation to v1.4.* or later!')
 
-    PATH_TO_CKPT = '/home/grayson/ws/tf-od-model-zoo/models/ssd_mobilenet_v1_coco_2017_11_17/inference/frozen_inference_graph.pb'
+    PATH_TO_CKPT = '/home/grayson/ws/tf-od-model-zoo/models/ssd_inception_v2_coco_2017_11_17/inference/frozen_inference_graph.pb'
 
     detection_graph = tf.Graph()
     with detection_graph.as_default():
