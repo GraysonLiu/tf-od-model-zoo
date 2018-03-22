@@ -1,4 +1,6 @@
 .idea
 datasets
 models/*
-!models/config/
+!models/configs/
+!models/sample_configs/
+

@@ -3,7 +3,7 @@
 # Running the Training Job
 python object_detection/train.py \
     --logtostderr \
-    --pipeline_config_path=/home/grayson/ws/tf-od-model-zoo/models/ssd_mobilenet_v1_coco_2017_11_17/ssd_mobilenet_v1_tianjin.config \
+    --pipeline_config_path=/home/grayson/ws/tf-od-model-zoo/models/configs/tianjin/ssd_mobilenet_v1_tianjin.config \
     --train_dir=/home/grayson/ws/tf-od-model-zoo/models/ssd_mobilenet_v1_coco_2017_11_17/fine_tune
 
 # Running Tensorboard
@@ -12,7 +12,7 @@ tensorboard --logdir=/home/grayson/ws/mobilenets/trained --port=12345
 # Exporting a trained model for inference
 python object_detection/export_inference_graph.py \
     --input_type image_tensor \
-    --pipeline_config_path /home/grayson/ws/tf-od-model-zoo/models/ssd_mobilenet_v1_coco_2017_11_17/ssd_mobilenet_v1_tianjin.config \
+    --pipeline_config_path /home/grayson/ws/tf-od-model-zoo/models/configs/tianjin/ssd_mobilenet_v1_tianjin.config \
     --trained_checkpoint_prefix /home/grayson/ws/tf-od-model-zoo/models/ssd_mobilenet_v1_coco_2017_11_17/fine_tune/model.ckpt-698 \
     --output_directory /home/grayson/ws/tf-od-model-zoo/models/ssd_mobilenet_v1_coco_2017_11_17/inference
 
@@ -28,7 +28,7 @@ python object_detection/export_inference_graph.py \
 # Running the Training Job
 python object_detection/train.py \
     --logtostderr \
-    --pipeline_config_path=/home/grayson/ws/tf-od-model-zoo/models/faster_rcnn_inception_v2_coco_2018_01_28/faster_rcnn_inception_v2_tianjin.config \
+    --pipeline_config_path=/home/grayson/ws/tf-od-model-zoo/models/configs/tianjin/faster_rcnn_inception_v2_tianjin.config \
     --train_dir=/home/grayson/ws/tf-od-model-zoo/models/faster_rcnn_inception_v2_coco_2018_01_28/fine_tune
 
 # Running Tensorboard
@@ -37,7 +37,7 @@ tensorboard --logdir=/home/grayson/ws/mobilenets/trained --port=12345
 # Exporting a trained model for inference
 python object_detection/export_inference_graph.py \
     --input_type image_tensor \
-    --pipeline_config_path /home/grayson/ws/tf-od-model-zoo/models/faster_rcnn_inception_v2_coco_2018_01_28/faster_rcnn_inception_v2_tianjin.config \
+    --pipeline_config_path /home/grayson/ws/tf-od-model-zoo/models/configs/tianjin/faster_rcnn_inception_v2_tianjin.config \
     --trained_checkpoint_prefix /home/grayson/ws/tf-od-model-zoo/models/faster_rcnn_inception_v2_coco_2018_01_28/fine_tune/model.ckpt-0 \
     --output_directory /home/grayson/ws/tf-od-model-zoo/models/faster_rcnn_inception_v2_coco_2018_01_28/inference
 
